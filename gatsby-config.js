@@ -1,6 +1,14 @@
 module.exports = {
+  pathPrefix: "/portfolio",
   siteMetadata: {
-    title: "Financial Planner",
+    siteTitle: `Muhammad Zulhilmi`,
+    siteTitleAlt: `Muhammad Zulhilmi`,
+    siteHeadline: `Muhammad Zulhilmi`,
+    siteUrl: `https://mzulhilmi.github.io`,
+    siteDescription: `My personal landing page`,
+    siteLanguage: `en`,
+    siteImage: `/banner.jpg`,
+    author: `@mzulhilmi`,
   },
   plugins: [
     {
@@ -33,10 +41,17 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: "sections",
+        path: "./src/sections",
       },
-      __key: "pages",
+      __key: "sections",
     },
-  ],
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {},
+    },
+    "gatsby-plugin-typescript",
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-theme-ui",
+  ].filter(Boolean),
 };
